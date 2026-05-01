@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADI | Arte, Diseño e Impresión</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --adi-red: #e63333;
+            --adi-dark: #1a1a1a;
+            --adi-gradient: linear-gradient(45deg, #e63333, #ff6b6b, #feb47b);
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+            background: #fff;
+        }
+
+        /* Header con ángulo inclinado */
+        header {
+            background: var(--adi-dark);
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo-header {
+            max-width: 280px;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+        }
+
+        /* Sección Hero con animación de degradado */
+        .hero {
+            height: 80vh;
+            background: var(--adi-gradient);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            padding: 0 20px;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .hero h1 { font-size: 4rem; font-weight: 900; text-transform: uppercase; margin: 0; line-height: 1; }
+        .hero p { font-size: 1.5rem; font-weight: 300; margin-top: 10px; }
+
+        /* Galería Creativa (Portafolio) */
+        .portfolio {
+            padding: 5rem 1rem;
+            background: #fff;
+        }
+
+        .grid-creativo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .item-creativo {
+            height: 350px;
+            background: #eee;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+
+        .item-creativo:hover { transform: scale(0.98) rotate(-1deg); }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            background: rgba(230, 51, 51, 0.9);
+            width: 100%;
+            padding: 20px;
+            color: white;
+            transform: translateY(100%);
+            transition: 0.3s;
+        }
+
+        .item-creativo:hover .overlay { transform: translateY(0); }
+
+        /* Botón Flotante Creativo */
+        .btn-creativo {
+            background: var(--adi-dark);
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 0;
+            font-weight: 700;
+            display: inline-block;
+            margin-top: 30px;
+            border: 2px solid white;
+            transition: 0.3s;
+        }
+
+        .btn-creativo:hover { background: white; color: var(--adi-red); }
+
+        /* Footer VP EG */
+        .vpeg-footer {
+            background: var(--adi-dark);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="logo-adi.png" alt="ADI Arte Diseño Impresión" class="logo-header">
+    </header>
+
+    <section class="hero">
+        <h1>Diseñamos realidades</h1>
+        <p>Donde el arte se encuentra con la precisión.</p>
+        <a href="https://wa.me/525655576283" target="_blank" class="btn-creativo">HABLEMOS DE TU PROYECTO</a>
+    </section>
+
+    <div class="portfolio">
+        <h2 style="text-align:center; text-transform:uppercase; font-size: 2.5rem; margin-bottom: 3rem;">Nuestro Laboratorio</h2>
+        <div class="grid-creativo">
+            <div class="item-creativo" style="background: url('textil.jpg') center/cover;">
+                <div class="overlay"><h3>Sublimación y Textil</h3><p>Jerseys, uniformes y prendas personalizadas.</p></div>
+            </div>
+            <div class="item-creativo" style="background: url('promocionales.jpg') center/cover;">
+                <div class="overlay"><h3>Promocionales</h3><p>Tazas, termos y artículos con identidad de marca.</p></div>
+            </div>
+            <div class="item-creativo" style="background: url('branding.jpg') center/cover;">
+                <div class="overlay"><h3>Diseño de Marca</h3><p>Logotipos, menús e identidad visual completa.</p></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="vpeg-footer">
+        <p style="font-size: 0.8rem; letter-spacing: 3px; opacity: 0.7;">UNA DIVISIÓN CREATIVA DE</p>
+        <img src="logo-vpeg-blanco.png" alt="VP Experience Group" style="max-width: 200px; margin: 15px 0;">
+        <p style="font-weight: 300;">Ingeniería Humana Aplicada a la Imagen Corporativa.</p>
+    </footer>
+
+</body>
+</html>
